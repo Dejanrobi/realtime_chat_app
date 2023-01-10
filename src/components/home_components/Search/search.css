@@ -1,0 +1,15 @@
+.search {
+  border-bottom: 1px solid gray;
+}
+.search .searchForm {
+  padding: 10px;
+}
+.search .searchForm input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+}
+.search .searchForm input::placeholder {
+  color: lightgray;
+}/*# sourceMappingURL=search.css.map */

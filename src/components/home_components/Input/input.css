@@ -1,0 +1,39 @@
+.input {
+  height: 50px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #2f2d52;
+  font-size: 18px;
+}
+.input input::placeholder {
+  color: rgb(180, 180, 180);
+}
+.input .send {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.input .send img {
+  height: 24px;
+  cursor: pointer;
+}
+.input .send label img {
+  margin-top: 5px;
+}
+.input .send button {
+  border: none;
+  padding: 9px 15px;
+  color: white;
+  background-color: #8da4f1;
+  cursor: pointer;
+  border-radius: 4px;
+}/*# sourceMappingURL=input.css.map */

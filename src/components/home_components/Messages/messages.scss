@@ -1,0 +1,21 @@
+.messages {
+  background-color: #ddddf7;
+  padding: 10px;
+
+  // 160 px bcause: 10px for chat info: 20px + 50px, 10px for input: 20px +50px, 10px for messages: 20px.
+  height: calc(100% - 160px);
+  overflow: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #919090;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+}

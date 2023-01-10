@@ -1,0 +1,19 @@
+.chatInfo {
+  height: 50px;
+  background-color: #5d5b8d;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: lightgray;
+}
+.chatInfo .chatIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.chatInfo .chatIcons img {
+  height: 24px;
+  cursor: pointer;
+}/*# sourceMappingURL=chat.css.map */

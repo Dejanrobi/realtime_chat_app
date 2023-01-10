@@ -76,4 +76,39 @@
   color: #5d5b8d;
   font-size: 12px;
   margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.container .sidebar {
+  flex: 1;
+}
+.container .chat {
+  flex: 2;
+}
+
+.userChat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.userChat:hover {
+  background-color: #2f2d52;
+}
+.userChat img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.userChat .userChatInfo span {
+  font-size: 16px;
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */

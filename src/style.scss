@@ -89,3 +89,44 @@
     }
   }
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  .sidebar {
+    flex: 1;
+  }
+  .chat {
+    flex: 2;
+  }
+}
+
+// User chat SCSS
+.userChat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2f2d52;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .userChatInfo {
+    span {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}

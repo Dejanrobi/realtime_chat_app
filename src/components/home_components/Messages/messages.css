@@ -1,0 +1,17 @@
+.messages {
+  background-color: #ddddf7;
+  padding: 10px;
+  height: calc(100% - 160px);
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.messages::-webkit-scrollbar {
+  width: 8px;
+  height: 50px;
+  cursor: pointer;
+}
+.messages::-webkit-scrollbar-thumb {
+  background-color: #919090;
+  border-radius: 16px;
+  cursor: pointer;
+}/*# sourceMappingURL=messages.css.map */
