@@ -1,8 +1,21 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../../firebase";
 
 // importing css
 import "./navbar.css";
-const navbar = () => {
+const Navbar = () => {
+  // Navigate hook onLogout
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // calling the firebase signOut function
+    signOut(auth);
+
+    // Navigating to the Login Page when the user Logs Out
+    navigate("/login");
+  };
   return (
     <div className="navbar">
       <span className="logo">Lama Chat</span>
@@ -12,10 +25,10 @@ const navbar = () => {
           alt=""
         />
         <span>John</span>
-        <button>Log out</button>
+        <button onClick={handleLogout}>Log out</button>
       </div>
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;

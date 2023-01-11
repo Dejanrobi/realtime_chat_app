@@ -1,3 +1,24 @@
+// Mobile applications
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+// Tablet Applications
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+//Laptop Applications
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -10,6 +31,11 @@
 
   .logo {
     font-weight: bold;
+
+    // Implementing the responsiveness
+    @include tablet {
+      display: none;
+    }
   }
 
   .user {

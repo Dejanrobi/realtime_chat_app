@@ -10,6 +10,11 @@
 .navbar .logo {
   font-weight: bold;
 }
+@media screen and (max-width: 768px) {
+  .navbar .logo {
+    display: none;
+  }
+}
 .navbar .user {
   display: flex;
   gap: 10px;

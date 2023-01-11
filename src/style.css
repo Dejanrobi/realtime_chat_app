@@ -38,6 +38,7 @@
 .formContainer .formWrapper form input {
   padding: 15px;
   border: none;
+  outline: none;
   width: 250px;
   border-bottom: 1px solid #a7bcff;
 }
