@@ -3,56 +3,31 @@
 import "./style.css";
 
 import { Home, Login, Register } from "./pages";
-import { BrowserRouter, Navigate, Outlet, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, NavLink, Outlet, Route, Router, Routes, useNavigate } from "react-router-dom";
 import { AuthContext } from "./context/authContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { async } from "@firebase/util";
 
 function App() {
-  const currentUser = useContext(AuthContext);
+  // const [isLoading, setIsLoading] = (false);
+  // const [userIn, setUserIn] = useState(false)
+  
+  
+  const currentUser = useContext(AuthContext)
+  
 
-  // const ProtectedRoute = ({children}) =>{
-  //   if(!currentUser){
-  //     return <Navigate to="/"/>
-  //   }
-  //   return children
-    
-  // }
-
-  // const ProtectedRoutes = ({auth}) => {    
-  //     return (auth ? <Outlet/> : <Navigate to="/" replace/>)
-  // }
+  // const navigate = useNavigate();
 
   
- 
   return (
-    // <div className="App">
-    //   {/* <Routes>
-        
-    //     <Route path="/*" element={<Home/>}/>
-    //     <Route path="login" element={<Login/>}/>
-    //     <Route path="home" element={<Home/>}/>
-    //     <Route path="register" element={<Register/>}/>
-        
-    //   </Routes> */}
-    // </div>
-
-      <BrowserRouter>
-        <Routes>
-          <Route path="/*" element={<Home/>}/>
-          <Route path="login" element={<Login/>}/>
-          <Route path="home" element={<Home/>}/>
-          <Route path="register" element={<Register/>}/>
-
-          
-
-          
-        </Routes>
-      </BrowserRouter>
-      
     
+      <Routes>
+        <Route path="/*" element={currentUser?<Home/>:<Login/>}/>
+        <Route path="/login" element={currentUser?<Navigate to="/home"/>:<Login/>}/>
+        <Route path="/home" element={currentUser?<Home/>: <Navigate to="/login"/>}/>
+        <Route path="/register" element={currentUser?<Navigate to="/home"/>:<Register/>}/>
+      </Routes>
       
-    
   );
 }
 

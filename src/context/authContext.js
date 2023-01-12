@@ -9,7 +9,9 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   // Creating the current user using useState
   // At the beginning, we will not have any user
+  // const [isUserIn, setIsUserIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  
 
   // Checking whether we have a user
   useEffect(() => {
