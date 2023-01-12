@@ -10,6 +10,12 @@
   color: white;
   outline: none;
 }
+.search .searchForm input::-moz-placeholder {
+  color: lightgray;
+}
+.search .searchForm input:-ms-input-placeholder {
+  color: lightgray;
+}
 .search .searchForm input::placeholder {
   color: lightgray;
 }/*# sourceMappingURL=search.css.map */

@@ -42,6 +42,12 @@
   width: 250px;
   border-bottom: 1px solid #a7bcff;
 }
+.formContainer .formWrapper form input::-moz-placeholder {
+  color: rgb(175, 175, 175);
+}
+.formContainer .formWrapper form input:-ms-input-placeholder {
+  color: rgb(175, 175, 175);
+}
 .formContainer .formWrapper form input::placeholder {
   color: rgb(175, 175, 175);
 }
@@ -106,8 +112,10 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .userChat .userChatInfo span {
   font-size: 16px;

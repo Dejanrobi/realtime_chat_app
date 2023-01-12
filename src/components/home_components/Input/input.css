@@ -13,6 +13,12 @@
   color: #2f2d52;
   font-size: 18px;
 }
+.input input::-moz-placeholder {
+  color: rgb(180, 180, 180);
+}
+.input input:-ms-input-placeholder {
+  color: rgb(180, 180, 180);
+}
 .input input::placeholder {
   color: rgb(180, 180, 180);
 }

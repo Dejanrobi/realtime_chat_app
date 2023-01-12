@@ -12,7 +12,7 @@ import { async } from "@firebase/util";
 
 // Importing the doc and setDOC functions
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // import "./register.css";
 
@@ -118,7 +118,7 @@ const Register = () => {
 
             // After the user has signed Up successfully, we need to head to the homepage
             // navigate using the useNavigate Hook
-            navigate("/home");
+            navigate("/");
           });
         }
       );
@@ -128,6 +128,7 @@ const Register = () => {
   };
 
   return (
+    
     <div className="formContainer">
       <div className="formWrapper">
         <span className="logo">Lama Chat</span>
@@ -150,7 +151,7 @@ const Register = () => {
           <button type="submit">Sign up</button>
           {err && <span>Something went wrong</span>}
         </form>
-        <p>You do have an account? Login</p>
+        <p>You do have an account? <Link to="/login">Login</Link></p>
       </div>
     </div>
   );

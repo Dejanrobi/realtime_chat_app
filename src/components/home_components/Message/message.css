@@ -15,8 +15,10 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .message .messageContent {
   max-width: 80%;
@@ -28,11 +30,14 @@
   background-color: white;
   padding: 10px 20px;
   border-radius: 0px 10px 10px 10px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
   max-width: max-content;
 }
 .message .messageContent img {
   width: 50%;
-  object-position: center;
+  -o-object-position: center;
+     object-position: center;
 }
 .message.owner {
   flex-direction: row-reverse;

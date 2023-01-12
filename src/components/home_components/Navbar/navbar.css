@@ -24,8 +24,10 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .navbar .user button {
   background-color: #5d5b8d;

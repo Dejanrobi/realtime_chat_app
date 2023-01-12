@@ -3,31 +3,56 @@
 import "./style.css";
 
 import { Home, Login, Register } from "./pages";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Outlet, Route, Router, Routes } from "react-router-dom";
 import { AuthContext } from "./context/authContext";
 import { useContext } from "react";
+import { async } from "@firebase/util";
 
 function App() {
-  const userLoggedIn = useContext(AuthContext);
-  const checkUser = () => {
-    if (userLoggedIn !== null) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  const currentUser = useContext(AuthContext);
+
+  // const ProtectedRoute = ({children}) =>{
+  //   if(!currentUser){
+  //     return <Navigate to="/"/>
+  //   }
+  //   return children
+    
+  // }
+
+  // const ProtectedRoutes = ({auth}) => {    
+  //     return (auth ? <Outlet/> : <Navigate to="/" replace/>)
+  // }
+
+  
+ 
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/*" element={userLoggedIn ? <Home /> : <Login />} />
-        <Route path="/home" element={userLoggedIn ? <Home /> : <Login />} />
-        <Route path="/login" element={userLoggedIn ? <Home /> : <Login />} />
-        <Route
-          path="/register"
-          element={userLoggedIn ? <Home /> : <Register />}
-        />
-      </Routes>
-    </div>
+    // <div className="App">
+    //   {/* <Routes>
+        
+    //     <Route path="/*" element={<Home/>}/>
+    //     <Route path="login" element={<Login/>}/>
+    //     <Route path="home" element={<Home/>}/>
+    //     <Route path="register" element={<Register/>}/>
+        
+    //   </Routes> */}
+    // </div>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/*" element={<Home/>}/>
+          <Route path="login" element={<Login/>}/>
+          <Route path="home" element={<Home/>}/>
+          <Route path="register" element={<Register/>}/>
+
+          
+
+          
+        </Routes>
+      </BrowserRouter>
+      
+    
+      
+    
   );
 }
 
