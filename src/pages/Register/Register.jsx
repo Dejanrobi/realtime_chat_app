@@ -41,7 +41,7 @@ const Register = () => {
     const d = new Date();
     let time = d.getTime();
     const fileAddress = time + displayName.replace(/\s/g, "");
-    console.log(fileAddress);
+    // console.log(fileAddress);
 
     // console.log(new Date());
 
@@ -91,7 +91,7 @@ const Register = () => {
           // Handle successful uploads on complete
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            console.log("File available at", downloadURL);
+            // console.log("File available at", downloadURL);
 
             // Updating the user profile using the updateFunction and passing the response
             await updateProfile(userResponse.user, {

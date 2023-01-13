@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import App from "./App";
 import { AuthContextProvider } from "./context/authContext";
+import { ChatContextProvider } from "./context/ChatContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,7 +12,9 @@ root.render(
   <Router>
     <React.StrictMode>
       <AuthContextProvider>
-        <App />
+        <ChatContextProvider>
+          <App />
+        </ChatContextProvider>      
       </AuthContextProvider>
     </React.StrictMode>
   </Router>

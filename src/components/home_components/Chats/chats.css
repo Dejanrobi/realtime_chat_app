@@ -1,4 +1,10 @@
 .userChatInfo p {
   font-size: 13px;
   color: lightgray;
+}
+
+.noChats {
+  padding-left: 10px;
+  padding-top: 20px;
+  color: lightgray;
 }/*# sourceMappingURL=chats.css.map */

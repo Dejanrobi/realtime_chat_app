@@ -17,12 +17,21 @@ function App() {
   
 
   // const navigate = useNavigate();
+  // Protected Router
+  const ProtectedRoute=({children})=>{
+    if(currentUser){
+      return <Home/>
+    }
+    return children
+  }
+
+  
 
   
   return (
     
       <Routes>
-        <Route path="/*" element={currentUser?<Home/>:<Login/>}/>
+        <Route path="/*" element={<ProtectedRoute><Login/></ProtectedRoute>}/>
         <Route path="/login" element={currentUser?<Navigate to="/home"/>:<Login/>}/>
         <Route path="/home" element={currentUser?<Home/>: <Navigate to="/login"/>}/>
         <Route path="/register" element={currentUser?<Navigate to="/home"/>:<Register/>}/>
