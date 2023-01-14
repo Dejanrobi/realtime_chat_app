@@ -12,18 +12,24 @@ const Message = ({message}) => {
   // Chat context
   const {data} = useContext(ChatContext)
   return (
-    <div className="message">
+    // <p>Hello how are you</p>
+    // Adding the owner of the message
+    
+    <div className={`message ${message.senderId === currentUser.uid && "owner"}`}>
       <div className="messageInfo">
         <img
-          src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src={message.senderId === currentUser.uid? currentUser.photoURL: data.user.photoURL}
           alt=""
         />
         <span>just now</span>
       </div>
       <div className="messageContent">
-        <p>hello</p>
+        <p>{message.text}</p>
         <img
-          src="https://images.pexels.com/photos/38554/girl-people-landscape-sun-38554.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src={message.img && <img
+            src={message.img}
+            alt=""
+          />} 
           alt=""
         />
       </div>

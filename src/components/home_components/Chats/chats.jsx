@@ -45,7 +45,7 @@ const Chats = () => {
   },[currentUser.uid])
 
   // Select function
-  const numberChats = chats.length
+  // const numberChats = chats.length
   const handleSelect = (userInfo) =>{
     // Updating our user
     dispatch({type:"CHANGE_USER", payload:userInfo})
@@ -61,7 +61,7 @@ const Chats = () => {
   if (chats && Object.keys(chats).length > 0) {
     return (
       <div className="chats">
-        {Object.entries(chats).map((chat) => (
+        {Object.entries(chats)?.sort((a,b)=>b[1].date - a[1].date).map((chat) => (
           // <div key={key}>{value}</div>
           <div className="userChat" key={chat[0]} onClick={()=>{handleSelect(chat[1].userInfo)}}>            
               <img
@@ -70,7 +70,7 @@ const Chats = () => {
               />
               <div className="userChatInfo">
                 <span>{chat[1].userInfo.displayName}</span>
-                <p>{chat[1].userInfo.lastMessage?.text}</p>
+                <p>{chat[1].lastMessage?.text}</p>
               </div>
             </div>
         ))}

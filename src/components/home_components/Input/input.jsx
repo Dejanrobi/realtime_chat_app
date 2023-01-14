@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import { arrayUnion, doc, Timestamp, updateDoc } from "firebase/firestore";
+import { arrayUnion, doc, serverTimestamp, Timestamp, updateDoc } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import { attach, img } from "../../../constants/images";
 import { firestoreDb, storage } from "../../../firebase";
@@ -79,6 +79,25 @@ const Input = () => {
       })
     }
 
+    // Updating the last Message sent for each user after sending the message
+    await updateDoc(doc(firestoreDb,"userChats", currentUser.uid),{
+      [data.chatId+".lastMessage"]:{
+        text
+      },
+      [data.chatId+".date"]:serverTimestamp()
+    })
+
+    // Updating the last message for the other user
+    await updateDoc(doc(firestoreDb,"userChats", data.user.uid),{
+      [data.chatId+".lastMessage"]:{
+        text
+      },
+      [data.chatId+".date"]:serverTimestamp()
+    })
+    // Deleting the image and text after sending
+    setText("");
+    setImg(null);
+
   }
 
   return (
@@ -88,7 +107,7 @@ const Input = () => {
         <img src={attach} alt="" />
         <input type="file" style={{ display: "none" }} id="file" onChange={e=>setImg(e.target.files[0])}/>
         <label htmlFor="file">
-          <img src={image} alt="" />
+          <img src={img} alt="" />
         </label>
 
         <button onClick={()=>{handleSend()}}>Send</button>
