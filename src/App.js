@@ -19,9 +19,6 @@ function App() {
   // const navigate = useNavigate();
   // Protected Router
   const ProtectedRoute=({children})=>{
-    if(currentUser){
-      return <Home/>
-    }
     return children
   }
 
